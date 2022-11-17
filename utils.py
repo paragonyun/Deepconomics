@@ -22,7 +22,7 @@ def diff(df, not_satisfied_lst: list , lag = 3) -> pd.DataFrame  :
     return diff_df
 
 def yeo_johnson(df, not_satisfied_lst : list) -> pd.DataFrame :
-    
+    print(f'Yeo-Johnson 변환을 실시합니다. \n변환 대상 : {not_satisfied_lst}')
     boxcox_df = df.copy()
     lst = not_satisfied_lst.copy()
 
