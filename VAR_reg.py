@@ -41,6 +41,8 @@ class VARModel :
     def forecast(self, fitted_model , train_df, test_df, min_p, step=5) :
         lagged = train_df.values[-min_p:]
         prediction = fitted_model.forecast(y = lagged, steps= step) ## steps : X_test가 5개로 할 거니 5개로 결정...!
-        df_pred = pd.DataFrame(prediction, index=test_df.index, columns = ['0','1','2','3','4','5','6','7','8','9','10','Target_preds'])
+        cols = [str(i) for i in range(len(train_df.columns) -1)]
+        cols.append('Target_preds')
+        df_pred = pd.DataFrame(prediction, index=test_df.index, columns =cols)
 
         return df_pred
