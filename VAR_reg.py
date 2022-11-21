@@ -68,10 +68,11 @@ class VARModel :
         return df
 
     def plot_impulse(self, fitted_model, num) :
-        # fig = plt.subplot(figsize=(100,100))
-        fitted_model.irf(num).plot()
+        # fig, ax = plt.subplots(figsize=(100,100))
+        # # ax.fitted_model.irf(num)
 
+        # fig.show()
+        # plt.figure(figsize=(500,100))
+        fitted_model.irf(num).plot(response='Target', figsize=(10,50))
+        plt.tight_layout()
         plt.show()
-
-
-        # plt.show()
