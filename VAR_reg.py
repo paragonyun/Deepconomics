@@ -16,7 +16,7 @@ class VARModel :
         model = VAR(self.df)
 
         results = []
-        for i in range(1, 15) :
+        for i in range(1, 20) :
             result = model.fit(i)
             results.append(result.aic)
 
